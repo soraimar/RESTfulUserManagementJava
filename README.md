@@ -38,6 +38,8 @@ Run tests:
 Swagger is a tool that allows you to document and test your RESTful APIs. The Swagger UI is available at the following URL:
 ```http://localhost:8080/swagger-ui.html```
 
+![img.png](img.png)
+
 ## Diagram
 
 ![Diagrama de Flujo](http://www.plantuml.com/plantuml/dpng/ZP4_ImD14CNx-nIFgxImiKmXyOzei0bYx8VT5rYpjnDtve9-UozdWY68fZcEdT-RWT-RcalrlikDhL9PIvKEvf-PmxUcC4x64QeQcwQzpOd5sUBY2kqppN4zdxKJt9TD4aHnDKIYjrvgKcmtmbWHAYLg8y7JHfm7sURdztZf0mkhOB6OtM7-T2BueYkMFzXNoIaAbbexSGKxIVb__BtdDmgZe2yfw77eHafGHEuid3rUdW_vEQibSu9vRwNv5Jq-lDWfbDn9ODdQYpp1txwX2ORtjPP8B7F_fk17ShNjsR6DaBGSLXMqm4TtKvOu5Fy5)
