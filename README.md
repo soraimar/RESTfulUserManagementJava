@@ -16,20 +16,20 @@ src/main/resources/schema.sql
 ## Running the API
 To run the API, execute the following command in the root directory of the project:
 
-Limpiar el proyecto (opcional):
+Clean the project (optional):
 ```
 ./gradlew clean
 ```
-Construir el proyecto: Este paso compila tu proyecto y crea el JAR ejecutable.
+Build the project: This step compiles your project and creates the executable JAR.
 ```
 ./gradlew build
 ```
-Ejecutar la aplicación: Para iniciar la aplicación Spring Boot, se utilizar el comando bootRun que ejecuta el proyecto como una aplicación.
+Run the application: To start the Spring Boot application, use the bootRun command that runs the project as an application.
 ```
 gradle bootRun
 ```
 
-Ejecutar test:
+Run tests:
 ```
 ./gradlew test
 ```
