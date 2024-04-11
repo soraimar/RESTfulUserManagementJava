@@ -3,7 +3,6 @@ package com.example.RESTfulUserManagementJava.entity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.util.Date;
 import java.util.Set;
