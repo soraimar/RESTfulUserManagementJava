@@ -4,6 +4,11 @@ import com.example.RESTfulUserManagementJava.dto.UserDTO;
 import com.example.RESTfulUserManagementJava.dto.UserResponseDTO;
 import com.example.RESTfulUserManagementJava.entity.User;
 import com.example.RESTfulUserManagementJava.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +27,13 @@ public class UserController {
     }
 
     @PostMapping
+    @Operation(summary = "Create User")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "User successfully created",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = UserResponseDTO.class)) }),
+            @ApiResponse(responseCode = "400", description = "Invalid user data provided")
+    })
     public ResponseEntity<?> createUser(@Valid @RequestBody UserDTO userDTO) {
         User user = userService.createUser(userDTO);
         UserResponseDTO userResponseDTO = convertToResponseDTO(user);
