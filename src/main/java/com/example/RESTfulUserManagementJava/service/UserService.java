@@ -35,11 +35,14 @@ public class UserService {
         user.setName(userDTO.getName());
         user.setEmail(userDTO.getEmail());
         user.setPassword(encoder.encode(userDTO.getPassword()));
-        user.setPassword(userDTO.getPassword());
         user.setPhones(convertPhoneDTOsToPhones(new HashSet<>(userDTO.getPhones())));
+        user.setToken(JwtService.createJWTToken(userDTO.getEmail(), userDTO.getName()));
+        //TODO: preguntar si se debe validar el token al crear el usuario o solo al hacer login
+        user.setActive(JwtService.validateJWTToken(user.getToken()));
         return userRepository.save(user);
     }
 
+    @Transactional
     public User updateUser(UUID userId, UserUpdateDTO userUpdateDTO) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new NoSuchElementException("Usuario no encontrado con ID: " + userId));
@@ -53,6 +56,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    @Transactional
     public User getUser(UUID userId) {
         return userRepository.findById(userId)
                 .orElseThrow(() -> new NoSuchElementException("Usuario no encontrado con ID: " + userId));

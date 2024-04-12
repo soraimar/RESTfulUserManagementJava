@@ -3,7 +3,7 @@ SET SCHEMA user_management;
 
 CREATE TABLE IF NOT EXISTS USERS (
     id UUID PRIMARY KEY,
-    token UUID,
+    token VARCHAR(255) NOT NULL,
     name VARCHAR(50) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,

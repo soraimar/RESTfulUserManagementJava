@@ -12,10 +12,11 @@ import java.util.UUID;
 @Table(name = "USERS")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    private UUID token;
+    @Column(length = 1024)
+    private String token;
 
     @Column(nullable = false, length = 50)
     private String name;
@@ -49,11 +50,11 @@ public class User {
         this.id = id;
     }
 
-    public UUID getToken() {
+    public String getToken() {
         return token;
     }
 
-    public void setToken(UUID token) {
+    public void setToken(String token) {
         this.token = token;
     }
 
@@ -119,12 +120,5 @@ public class User {
 
     public void setActive(boolean active) {
         isActive = active;
-    }
-
-    @PrePersist
-    protected void onPrePersist() {
-        if (token == null) {
-            token = UUID.randomUUID();
-        }
     }
 }

@@ -18,8 +18,8 @@ public class UserResponseDTO {
     @Schema(description = "Date of the user's last login", example = "2023-04-12T11:00:00Z", format = "date-time")
     private Date lastLoginDate;
 
-    @Schema(description = "Date of the user's last login", example = "2023-04-12T11:00:00Z", format = "date-time")
-    private UUID token;
+    @Schema(description = "token", example = "2023-04-12T11:00:00Z")
+    private String token;
 
     @Schema(description = "Indicates whether the user is active or not", example = "true")
     private boolean active;
@@ -56,11 +56,11 @@ public class UserResponseDTO {
         this.lastLoginDate = lastLoginDate;
     }
 
-    public UUID getToken() {
+    public String getToken() {
         return token;
     }
 
-    public void setToken(UUID token) {
+    public void setToken(String token) {
         this.token = token;
     }
 
